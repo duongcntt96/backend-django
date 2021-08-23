@@ -11,14 +11,14 @@ from rest_framework import generics
 
 class ListUsers(APIView):
     # authentication_classes = [authentication.TokenAuthentication]
-    permission_classes = [permissions.IsAdminUser]
+    # permission_classes = [permissions.IsAdminUser]
 
     def get(self, request, format=None):
         usernames = [user.username for user in User.objects.all()]
         return Response(usernames)
 
 class GetListPosts(APIView):
-    permission_classes = [permissions.IsAdminUser]
+    # permission_classes = [permissions.IsAdminUser]
 
     def get(self, request, format=None):
         post = Post.objects.all()
@@ -42,4 +42,4 @@ class ListPostSet(
                 ):
     serializer_class = PostSerializer
     queryset = Post.objects.all()
-    permission_classes =[permissions.IsAdminUser]
+    # permission_classes =[permissions.IsAdminUser]
