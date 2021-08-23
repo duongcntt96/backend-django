@@ -3,7 +3,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-cf#_o^*j=%eg!!s%iotp26q9=i4r@^1y^^!!n6*nsow+%z%-w$'
 DEBUG = True
-ALLOWED_HOSTS = ['*',]
+ALLOWED_HOSTS = ['*','https://bad-site.herokuapp.com']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
