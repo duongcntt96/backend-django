@@ -1,9 +1,11 @@
+import os
+import dj_database_url
 from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-cf#_o^*j=%eg!!s%iotp26q9=i4r@^1y^^!!n6*nsow+%z%-w$'
 DEBUG = True
-ALLOWED_HOSTS = ['*','https://bad-site.herokuapp.com']
+ALLOWED_HOSTS = ['*', 'https://bad-site.herokuapp.com']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -15,6 +17,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'restapi',
+    'xe'
 ]
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -88,11 +91,9 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
-import dj_database_url
 pro_db = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(pro_db)
 
-import os
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 CORS_ORIGIN_ALLOW_ALL = True
